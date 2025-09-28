@@ -26,9 +26,9 @@ a {
 }
 
 .container {
-    max-width: 1158px;
-    padding: 0 15px;
-    margin: 0 auto;
+    margin: 0 auto; 
+    max-width: 320px;
+    padding: 0 16px;
 }
 
 .nav-logo, 
@@ -40,7 +40,7 @@ a {
     text-transform: uppercase;
     line-height: 1.17;
     letter-spacing: 0.03em;
-    margin-right: 76px;
+    /* margin-right: 76px; */
 }
 .nav-logo .text-logo {
     color: #2e2f42;
@@ -69,19 +69,6 @@ a {
     align-items: baseline;
     justify-content: space-between;
 } 
-
-/*.nav-links {
-    font-style: normal;
-    font-size: 16px;
-    font-weight: 500;
-    color: #404bbf;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    padding: 24px 0;
-    display: block;
-    position: relative;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}*/
 
 .nav-links {
     font-style: normal;
@@ -182,7 +169,10 @@ a {
 /* --- Sections 2 --- */
 
 .advant {
-    padding: 120px 0;
+    /* padding: 120px 0; */     /* PC */
+    padding: 96px 0;       /* SMART */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .visually-hidden {
@@ -200,15 +190,18 @@ a {
 
 .advent-list {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    /* gap: 24px; */      /* PC */
+    gap: 72px;
     
 }
 .advent-item {
-    width: calc((100% - 72px) / 4);
+    /* width: calc((100% - 72px) / 4); */     /* PC */
+    width: 100%;                              /* SMART */
     
 }
 
-.advent-icon {
+/* .advent-icon {                         
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,27 +210,31 @@ a {
     border-radius: 4px;
     border: 1px solid #8E8f99;
     margin-bottom: 8px; 
-}
+} */                             /* PC */
 
 .advent-subtitle {
-    font-weight: 500;
-    font-size: 20px;
+    /* font-weight: 500;
+    font-size: 20px; */     /* PC */
+    font-weight: 700;
+    font-size: 36px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42;
     margin-bottom: 8px;
-
+    text-align: center; /* SMART */
 }
 .advent-description {
     line-height: 1.5;
     letter-spacing: 0.02em;
+    font-size: 16px; /* SMART */
+    font-weight: 500; /* SMART */
 }
 
 /* --- Sections 3 --- */
 
 .team {
     background-color: #F4F4FD;
-    padding: 120px 0;
+    padding: 96px 0;  /* SMART */
 }
 .team-title {
     text-transform: capitalize;
@@ -252,12 +249,12 @@ a {
 }
 .team-list {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 72px;
     justify-content: center;
-    
 }
 .team-item {
-    width: calc((100% - 72px) / 4);
+    max-width: 264px;
     border-radius: 0px 0px 4px 4px;
     background-color: #FFFFFF;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -315,12 +312,13 @@ a {
 /* --- Sections 4 portfolio --- */
 
 .portfolio {
-    padding-top: 120px;
-    padding-bottom: 120px; 
+    padding-top: 96px;
+    padding-bottom: 96px; 
 }
 
 .portfolio-title {
     text-transform: capitalize;
+    font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
@@ -332,13 +330,13 @@ a {
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 48px;
+    gap: 48px;
     justify-self: start;
 }
 
 .portfolio-item {
-    width: calc((100% - 48px) / 3);
+    width: 100%;
+    /* width: calc((100% - 48px) / 3); */
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -396,21 +394,27 @@ a {
 
 .footer {
     background-color: #2e2f42;
-    padding: 100px 0;
+    padding: 96px 0;
 } 
-.footer-container {
+.footer-info {
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 72px;
 }
 
     .footer-logo-text {
-    margin-right: 120px
+    
+    /* max-width: 100%; */
+    /* text-align: center; */
+    /* margin-right: 120px */
 }
 
 .footer-social {
     display: flex;
     flex-direction: column;
-    margin-right: 80px;
+    /* margin-right: 80px; */
 }
 
 .footer-social-text{
@@ -459,7 +463,8 @@ a {
     line-height: 150%;
     letter-spacing: 0.02em;
     color: #F4F4FD;
-    max-width: 264px;
+    width: 264px;
+    text-align: start;
 }
 /* --- Subscribe --- */
 
@@ -473,9 +478,9 @@ a {
 }
 .form-sub{
     display: flex;
+    align-items: center;
+    flex-direction: column;
     gap: 24px;
-}
-.form-sub-text{
 }
 .form-sub-input{
     width: 264px;
@@ -708,4 +713,159 @@ a {
     transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* TABLET */
 
+@media screen and (min-width: 768px){
+    .container {
+        max-width: 768px;
+        padding: 0 16px;
+        
+    }
+    /* .hero {
+        flex-direction: column;
+        padding: 100px 0 60px 0;
+    }
+    .hero-title {
+        font-size: 32px;
+        max-width: 280px;
+        margin-bottom: 32px;
+    }
+    .hero-button {
+        margin-bottom: 100px;
+    } */
+    .advant {
+        padding: 96px 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .advent-list {
+        gap: 72px;
+    }
+    .advent-item {
+        width: calc((100% - 72px) / 2);
+    }
+    .advent-subtitle {
+        text-align: left;
+    }
+    .advent-description {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .team {
+        padding: 96px;
+    }
+    .team-list {
+        gap: 64px 24px;
+        align-items: center;
+    }
+    .team-item {
+        width: calc((100% - 24px) / 2);
+    }
+    .portfolio {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
+    .portfolio-title {
+        font-size: 28px;
+        margin-bottom: 48px;
+    }
+    .portfolio-list {
+        gap: 72px 24px;
+        align-items: center;
+    }
+    .portfolio-item {
+        width: calc((100% - 24px) / 2);
+    }
+    /* footer TABLET */
+    .footer-info {
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 108px;
+    align-items: flex-start;
+    text-align: start;
+    gap: 72px 24px;
+    }
+    .form-sub {
+        gap: 24px;
+        flex-direction: row;
+    }    
+}  
+
+/* PC */
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+        padding: 0 15px;
+        }
+        .advant {
+            padding: 120px 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .advent-list {
+            gap: 24px;
+        }
+        .advent-item {
+            width: calc((100% - 72px) / 4);
+        }
+        .advent-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 112px;
+            background-color: #F4F4fD;
+            border-radius: 4px;
+            border: 1px solid #8E8f99;
+            margin-bottom: 8px;        
+        } 
+        .advent-subtitle {
+            font-weight: 500;
+            font-size: 20px;
+            text-align: left;
+        }
+        .advent-description {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .team {
+            padding: 120px 0;
+        }
+        .team-list {
+            gap: 24px;
+        }
+        .team-item {
+            width: calc((100% - 72px) / 4);
+        }
+        .portfolio {
+            padding-top: 120px;
+            padding-bottom: 120px;       
+        }    
+        .portfolio-list {
+        }
+        .portfolio-item {
+            width: calc((100% - 48px) / 3);
+        }
+    /* footer PC */
+        .footer{
+            padding: 100px 0;
+        }
+        .footer-info {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            padding: 0;
+        }
+        .footer-logo{
+            margin-right: 76px;
+        }
+        .footer-logo-text {
+            margin-right: 120px;
+        }
+        .footer-social{
+            margin-right: 80px;
+        }
+        .form-sub{
+            gap: 24px;
+            flex-direction: row;
+        }
+    }
