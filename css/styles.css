@@ -24,6 +24,9 @@ img {
 a {
     text-decoration: none;
 }
+button {
+    cursor: pointer;
+}
 
 .container {
     margin: 0 auto; 
@@ -40,7 +43,8 @@ a {
     text-transform: uppercase;
     line-height: 1.17;
     letter-spacing: 0.03em;
-    /* margin-right: 76px; */
+    padding: 16px 0;
+    display: block;
 }
 .nav-logo .text-logo {
     color: #2e2f42;
@@ -52,70 +56,27 @@ a {
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-.header-nav {
+.header-container {
+    /* padding: 16px 16px; */
     display: flex;
     align-items: center;
-    
-}
-.nav-list, .address-list {
-    display: flex;
-    gap: 40px;
-    margin-right: 0;
-}
-
-.header-container {
-    padding: 0 15px;
-    display: flex;
-    align-items: baseline;
     justify-content: space-between;
 } 
-
-.nav-links {
-    font-style: normal;
-        font-size: 16px;
-        font-weight: 500;
-        color: #2e2f42;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        padding: 24px 0;
-        display: block;
-        position: relative;
+.nav-list, .address {
+    display: none;
 }
 
-.studio .nav-links {
-    color: #404bbf;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.burger-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
-.studio .nav-links::after {
-        content: "";
-        width: 100%;
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        height: 4px;
-        background-color: #404bbf;
-        border-radius: 2px;
+.burger-icon {
+    fill: #2e2f42;
+    display: block;
 }
-
-.nav-links:hover, 
-.nav-links:focus,
-.address-link:hover, 
-.address-link:focus {
-    color: #404bbf;
-}
-
-.address {
-    font-style: normal;
-}
-.address-link {
-    line-height: 1.5;
-    font-size: 16px;
-    color: #434455;
-    letter-spacing: 0.02em;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
 
 /* --- Sections 1 --- */
 
@@ -123,25 +84,32 @@ a {
     display: flex;
     background-color: #2E2F42;  
     background-image:linear-gradient(rgba(46, 47, 66, 0.7),
-    rgba(46, 47, 66, 0.7)), url("../images/people-office.jpg");
+    rgba(46, 47, 66, 0.7)), url("../images/people-office-mob.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 188px 0;
+    padding: 72px 0;
     max-width: 1440px;
     margin: 0 auto;
 
+    /* @media screen and (min-resolutin 2x) {
+        background-image: linear-gradient(
+            rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)
+            ), 
+            url("../images/people-office-mob-2x.jpg");
+    } */
 }
 
 .hero-title {
-    font-size: 56px;
-    font-weight: bold;
+    font-size: 36px;
+    font-weight: 700;
     color: #ffffff;
     text-align: center;
-    line-height: 1.07;
+    line-height: 1.11;
     letter-spacing: 0.02em;
-    max-width: 496px;
-    margin: 0 auto 48px auto;
+    max-width: 216px;
+    margin: 0 auto 72px auto;
 }
 
 .hero-button {
@@ -201,16 +169,9 @@ a {
     
 }
 
-/* .advent-icon {                         
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 112px;
-    background-color: #F4F4fD;
-    border-radius: 4px;
-    border: 1px solid #8E8f99;
-    margin-bottom: 8px; 
-} */                             /* PC */
+.advent-icon {
+    display: none; 
+}                       
 
 .advent-subtitle {
     /* font-weight: 500;
@@ -718,21 +679,87 @@ a {
 @media screen and (min-width: 768px){
     .container {
         max-width: 768px;
-        padding: 0 16px;
-        
+        }
+    .burger-btn {
+        display: none;
     }
-    /* .hero {
+    .header-nav {
+        display: flex;
+        align-items: center;
+    }
+    .nav-logo {
+        margin-right: 120px;
+        padding: 24px 0;
+    }
+    .nav-list  {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+    .nav-links {
+        font-style: normal;
+        font-size: 16px;
+        font-weight: 500;
+        color: #2e2f42;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 24px 0;
+        display: block;
+        position: relative;
+    }
+    .studio .nav-links {
+        color: #404bbf;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .studio .nav-links::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        height: 4px;
+        background-color: #404bbf;
+        border-radius: 2px;
+    }
+    .nav-links:hover, 
+    .nav-links:focus,
+    .address-link:hover, 
+    .address-link:focus {
+        color: #404bbf;
+    }
+    .address {
+        font-style: normal;
+        display: block;
+    }
+    .address-list{
+        display: flex;
         flex-direction: column;
-        padding: 100px 0 60px 0;
+        gap: 12px;
+    }
+    .address-link {
+        line-height: 1.5;
+        font-size: 16px;
+        color: #434455;
+        letter-spacing: 0.02em;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 112px 0;
+        background-image: linear-gradient(
+            rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)
+            ), 
+            url("../images/people-office-tab.jpg");
     }
     .hero-title {
-        font-size: 32px;
-        max-width: 280px;
-        margin-bottom: 32px;
+        font-size: 56px;
+        line-height: 1.07;
+        max-width: 496px;
+        margin: 0 auto 36px auto;
     }
-    .hero-button {
-        margin-bottom: 100px;
-    } */
+
     .advant {
         padding: 96px 0;
         margin-left: auto;
@@ -797,6 +824,32 @@ a {
         max-width: 1158px;
         padding: 0 15px;
         }
+        .nav-logo {
+            margin-right: 76px;
+        }
+        .burger-btn {
+            display: none;
+        }
+        .address-list{
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero {
+            padding: 188px 0;
+            
+        }
+        .hero-title {
+            font-size: 56px;
+            line-height: 1.07;
+            margin: 0 auto 48px auto;
+        }
+
+
+
+
+
         .advant {
             padding: 120px 0;
             margin-left: auto;
@@ -869,3 +922,101 @@ a {
             flex-direction: row;
         }
     }
+
+/* --- mob-menu --- */
+
+.mob-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.mob-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;     
+}
+.mob-container {
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+} 
+
+.burger-btn-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #e7e9fc;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+.nav-mob {
+    margin-bottom: auto;
+}
+.nav-list-mob {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+}
+.nav-links-mob {
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2e2f42;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    display: block;
+    
+}
+.studio .nav-links-mob  {
+    color: #404bbf;
+}
+.address-mob{
+    font-style: normal;
+}
+.address-list-mob {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.address-link-mob {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+.tel .address-link-mob {
+    color: #4d5ae5;
+}
+.header-mob-social-list{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+@media screen and (min-width: 767px){
+    .mob-menu {
+        display: none;
+    }
+}
