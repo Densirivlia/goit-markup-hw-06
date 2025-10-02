@@ -812,15 +812,8 @@ button {
     .form-sub {
         gap: 24px;
         flex-direction: row;
-    }
-      /* modal */
-    .modal {
-        width: 408px;
-        
+    }     
 } 
-
-
-
 
 /* PC */
 @media screen and (min-width: 1158px) {
