@@ -812,7 +812,11 @@ button {
     .form-sub {
         gap: 24px;
         flex-direction: row;
-    }     
+    }
+    .modal {
+        width: 408px;
+        
+    } 
 } 
 
 /* PC */
