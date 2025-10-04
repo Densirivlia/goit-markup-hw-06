@@ -595,13 +595,14 @@ button {
 }
 
 .modal-label {
-    display: block;
+    display: inline-block;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     margin-bottom: 4px;
+    
     
 }
 .modal-textarea {
@@ -630,6 +631,7 @@ button {
 }
 .modal-checkbox{
     margin-bottom: 24px;
+    
 }
 .checkbox{
     width: 16px;
@@ -642,6 +644,7 @@ button {
     fill: transparent;
     border: 1px solid rgba(46, 47, 66, 0.4);
     fill: transparent;
+    margin-right: 8px;
 }
 
 #user-privacy:checked +  .modal-label .checkbox {
@@ -839,7 +842,10 @@ button {
 
         .hero {
             padding: 188px 0;
-            
+            background-image: linear-gradient(
+                rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)), 
+            url("../images/people-office.jpg");
         }
         .hero-title {
             font-size: 56px;
